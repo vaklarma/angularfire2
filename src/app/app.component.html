@@ -2,5 +2,7 @@
 <p>
   Start editing to see some magic happen :)
 </p>
-
-{{firstnames | json}}
+<ul>
+  <li *ngFor="let fname of firstnames">{{fname.firstname}}</li>
+</ul>
+<pre>{{userData | json}}</pre>
