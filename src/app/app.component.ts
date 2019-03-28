@@ -19,7 +19,7 @@ userData;
       data => this.firstnames = data
     );
 
-this.afDb.list('users/qK5jLi6UtqXKqkMiq9agJ0w6u4o1')
+this.afDb.object('users/qK5jLi6UtqXKqkMiq9agJ0w6u4o1')
 .valueChanges()
   .subscribe(
       data => this.userData = data
