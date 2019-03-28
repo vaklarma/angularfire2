@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FirebaseApp } from '@angular/fire';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'my-app',
@@ -8,8 +9,13 @@ import { FirebaseApp } from '@angular/fire';
 })
 export class AppComponent  {
   name = 'Angular 6';
-
-  constructor(public app: FirebaseApp) {
-    
+firstnames;
+  constructor(public app: FirebaseApp,
+  private afDb: AngularFireDatabase) {
+    this.afDb.list('firstnames')
+    .valueChanges()
+    .subscribe(
+      data => this.firstnames = data
+    );
   }
 }
